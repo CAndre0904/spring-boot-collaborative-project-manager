@@ -5,11 +5,12 @@ services:
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
-      PGDATA: /data/postgres
+      POSTGRES_DB: project_manager
     volumes:
-      - db:/data/postgres
+      - dadb:/data/postgres
     ports:
       - "5332:5432"
     restart: unless-stopped
+
 volumes:
   db:

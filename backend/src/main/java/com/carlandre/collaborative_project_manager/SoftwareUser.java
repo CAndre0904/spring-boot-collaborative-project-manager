@@ -5,14 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class ManagerUser {
+public class SoftwareUser {
     @Id
     private int id;
     private String email;
     private String name;
     private String password;
 
-    public ManagerUser(int id, String email, String name, String password) {
+    public SoftwareUser(int id, String email, String name, String password) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -55,7 +55,7 @@ public class ManagerUser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ManagerUser user = (ManagerUser) o;
+        SoftwareUser user = (SoftwareUser) o;
         return id == user.id && Objects.equals(email, user.email) && Objects.equals(name, user.name) && Objects.equals(password, user.password);
     }
 

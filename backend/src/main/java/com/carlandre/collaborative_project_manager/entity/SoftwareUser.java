@@ -2,16 +2,22 @@ package com.carlandre.collaborative_project_manager.entity;
 
 import java.util.Objects;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class SoftwareUser {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String email;
     private String name;
     private String password;
 
+    public SoftwareUser() {
+
+    }
     public SoftwareUser(int id, String email, String name, String password) {
         this.id = id;
         this.email = email;

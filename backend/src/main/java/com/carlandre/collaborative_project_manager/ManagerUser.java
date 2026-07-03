@@ -1,14 +1,18 @@
 package com.carlandre.collaborative_project_manager;
 
 import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-public class User {
+@Entity
+public class ManagerUser {
+    @Id
     private int id;
     private String email;
     private String name;
     private String password;
 
-    public User(int id, String email, String name, String password) {
+    public ManagerUser(int id, String email, String name, String password) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -51,7 +55,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        ManagerUser user = (ManagerUser) o;
         return id == user.id && Objects.equals(email, user.email) && Objects.equals(name, user.name) && Objects.equals(password, user.password);
     }
 

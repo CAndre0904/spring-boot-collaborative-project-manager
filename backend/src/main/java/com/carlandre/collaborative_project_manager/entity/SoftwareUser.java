@@ -1,4 +1,4 @@
-package com.carlandre.collaborative_project_manager;
+package com.carlandre.collaborative_project_manager.entity;
 
 import java.util.Objects;
 import jakarta.persistence.Entity;

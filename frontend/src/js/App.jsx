@@ -1,8 +1,8 @@
 // Adapted from Codecademy
 
 import React from "react";
-import Shop from "./Home";
+import SignUp from "./SignUp";
 
 export default function App() {
-  return <Home />;
+  return <SignUp />;
 }

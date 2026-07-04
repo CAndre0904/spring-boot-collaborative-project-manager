@@ -1,8 +1,6 @@
-// Adapted from Codecademy
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.js';
+import App from './js/App';
 
 ReactDOM.createRoot(
   document.querySelector('#app')

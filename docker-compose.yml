@@ -1,0 +1,16 @@
+services:
+  db:
+    container_name: postgres-project-manager
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: project_manager
+    volumes:
+      - dadb:/data/postgres
+    ports:
+      - "5332:5432"
+    restart: unless-stopped
+
+volumes:
+  db:

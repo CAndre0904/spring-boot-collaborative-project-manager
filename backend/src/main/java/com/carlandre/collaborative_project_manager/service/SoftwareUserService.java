@@ -19,4 +19,12 @@ public class SoftwareUserService {
     public List<SoftwareUser> getAllSoftwareUsers() {
         return softwareUserRepository.findAll();
     }
+
+    public void insertSoftwareUser(SoftwareUser newUser) {
+        softwareUserRepository.save(newUser);
+    }
+
+    public SoftwareUser getSoftwareUserById(Integer id) {
+        return softwareUserRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found."));
+    }
 }

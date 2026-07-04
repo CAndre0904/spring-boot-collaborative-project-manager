@@ -4,9 +4,7 @@ package com.carlandre.collaborative_project_manager.controller;
 
 import com.carlandre.collaborative_project_manager.entity.SoftwareUser;
 import com.carlandre.collaborative_project_manager.service.SoftwareUserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,15 @@ public class SoftwareUserController {
     public List<SoftwareUser> getUsers() {
         return softwareUserService.getAllSoftwareUsers();
 
+    }
+
+    @GetMapping("{id}")
+    public SoftwareUser getUserById(@PathVariable Integer id) {
+        return softwareUserService.getSoftwareUserById(id);
+    }
+
+    @PostMapping
+    public void newSoftwareUser(@RequestBody SoftwareUser newUser) {
+        softwareUserService.insertSoftwareUser(newUser);
     }
 }

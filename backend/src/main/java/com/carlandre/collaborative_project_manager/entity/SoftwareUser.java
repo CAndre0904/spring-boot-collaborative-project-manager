@@ -18,8 +18,7 @@ public class SoftwareUser {
     public SoftwareUser() {
 
     }
-    public SoftwareUser(int id, String email, String name, String password) {
-        this.id = id;
+    public SoftwareUser(String email, String name, String password) {
         this.email = email;
         this.name = name;
         this.password = password;

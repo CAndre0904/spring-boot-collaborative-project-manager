@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("software-user")
+@CrossOrigin
 public class SoftwareUserController {
     private final SoftwareUserService softwareUserService;
 

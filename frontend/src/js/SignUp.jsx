@@ -15,9 +15,26 @@ function SignUp() {
   function handlePasswordInput(e) {
       setPasswordInput(e.target.value);
   }
-  function createAccount(email, name, password) {
 
+  function createAccount() {
+    const details = {
+      email: emailInput,
+      name: nameInput,
+      password: passwordInput,
+    };
+    fetch("http://localhost:8080/software-user", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(details),
+    });
+    setEmailInput('');
+    setNameInput('');
+    setPasswordInput('');
+    alert("ACCOUNT CREATED!");
   }
+
   return (
     <>
       <div>
@@ -35,6 +52,7 @@ function SignUp() {
             <input id="password" type="text"  onChange={handlePasswordInput} value={passwordInput} />
         </form>
       </div>
+
       <button onClick={createAccount}> Create Account </button>
     </>
   );

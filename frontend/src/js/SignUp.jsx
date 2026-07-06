@@ -1,6 +1,7 @@
 // Adapted from Codecademy
 
 import React, { useState } from "react";
+import "../css/signup.css";
 
 function SignUp() {
   const [emailInput, setEmailInput] = useState('');
@@ -36,7 +37,7 @@ function SignUp() {
   }
 
   return (
-    <>
+    <div className="signup">
       <div>
         <h1>Sign Up</h1>
         <form>
@@ -54,7 +55,7 @@ function SignUp() {
       </div>
 
       <button onClick={createAccount}> Create Account </button>
-    </>
+    </div>
   );
 }
 

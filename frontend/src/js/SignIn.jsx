@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+  const navigate = useNavigate();
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
   function handleEmailInput(e) {
@@ -11,7 +13,7 @@ function SignIn() {
   }
 
   async function validateDetails() {
-    fetch("http://localhost:8080/validate-details", {
+    const response = await fetch("http://localhost:8080/software-user/validate-password", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -21,12 +23,12 @@ function SignIn() {
         password: passwordInput}),
 
     });
-    const valid = await response.json();
+    const valid = await response.json()
     if (valid === true) {
         navigate("/home");
     }
     else {
-        alert("INCORRECT DETAILS");
+        alert("LOGIN DETAILS ARE INCORRECT");
     }
     setEmailInput('');
     setPasswordInput('');

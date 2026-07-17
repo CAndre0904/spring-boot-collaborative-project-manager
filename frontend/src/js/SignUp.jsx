@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import "../css/signup.css";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [emailInput, setEmailInput] = useState('');
   const [nameInput, setNameInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
@@ -34,6 +36,7 @@ function SignUp() {
     setNameInput('');
     setPasswordInput('');
     alert("ACCOUNT CREATED!");
+    navigate("/signin");
   }
 
   return (

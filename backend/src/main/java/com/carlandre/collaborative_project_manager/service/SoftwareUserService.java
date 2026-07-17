@@ -27,4 +27,8 @@ public class SoftwareUserService {
     public SoftwareUser getSoftwareUserById(Integer id) {
         return softwareUserRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found."));
     }
+
+    public SoftwareUser getSoftwareUserByEmail(String email) {
+        return softwareUserRepository.findByEmail(email).orElseThrow(() -> new IllegalStateException(email + " not found."));
+    }
 }

@@ -2,11 +2,13 @@
 
 package com.carlandre.collaborative_project_manager.controller;
 
+import com.carlandre.collaborative_project_manager.entity.LoginRequest;
 import com.carlandre.collaborative_project_manager.entity.SoftwareUser;
 import com.carlandre.collaborative_project_manager.service.SoftwareUserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("software-user")
@@ -24,13 +26,22 @@ public class SoftwareUserController {
 
     }
 
-    @GetMapping("{id}")
+    @GetMapping("get-by-id/{id}")
     public SoftwareUser getUserById(@PathVariable Integer id) {
         return softwareUserService.getSoftwareUserById(id);
     }
 
+    @GetMapping("get-by-email/{email}")
+    public SoftwareUser getUserByEmail(@PathVariable String email) { return softwareUserService.getSoftwareUserByEmail(email);}
+
     @PostMapping
     public void newSoftwareUser(@RequestBody SoftwareUser newUser) {
         softwareUserService.insertSoftwareUser(newUser);
+    }
+
+    @PostMapping("validate-password")
+    public boolean validatePassword(@RequestBody LoginRequest request) {
+        SoftwareUser userToValidate = getUserByEmail(request.getEmail());
+        return Objects.equals(userToValidate.getPassword(), request.getPassword());
     }
 }

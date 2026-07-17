@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/signin.css";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -35,8 +36,7 @@ function SignIn() {
   }
 
   return (
-    <>
-      <div>
+      <div className="signin">
         <h1>Sign In</h1>
         <form>
           <label htmlFor="email">Email: </label>
@@ -46,10 +46,10 @@ function SignIn() {
             <label htmlFor="password">Password: </label>
             <input id="password" type="text"  onChange={handlePasswordInput} value={passwordInput} />
         </form>
+        <button onClick={validateDetails}> Sign In </button>
       </div>
 
-      <button onClick={validateDetails}> Sign In </button>
-    </>
+
   );
 }
 

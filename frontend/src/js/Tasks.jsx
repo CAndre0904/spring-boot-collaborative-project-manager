@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-git
+import "../css/tasks.css";
 
 function Tasks() {
-
-
-  function createAccount() {
-
-
-  }
-
   return (
     <>
-      <div>
-        <h1>Tasks</h1>
+      <div className="tasks-title">
+        <h1>Tasks Page</h1>
       </div>
 
     </>

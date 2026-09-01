@@ -15,3 +15,14 @@ input {
   position: relative;
   left: 5px;
 }
+
+.site-links {
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+}
+
+.site-links a {
+        color: white;
+        text-decoration: none;
+}

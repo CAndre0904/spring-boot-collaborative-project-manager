@@ -1,4 +1,10 @@
 package com.carlandre.collaborative_project_manager.repository;
+import com.carlandre.collaborative_project_manager.entity.Task;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class TaskRepository {
+import java.util.Optional;
+
+@Repository
+public interface TaskRepository extends JpaRepository<Task, Integer> {
 }

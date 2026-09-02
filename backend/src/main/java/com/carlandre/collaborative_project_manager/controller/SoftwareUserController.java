@@ -26,12 +26,12 @@ public class SoftwareUserController {
 
     }
 
-    @GetMapping("get-by-id/{id}")
+    @GetMapping("get-user-by-id/{id}")
     public SoftwareUser getUserById(@PathVariable Integer id) {
         return softwareUserService.getSoftwareUserById(id);
     }
 
-    @GetMapping("get-by-email/{email}")
+    @GetMapping("get-user-by-email/{email}")
     public SoftwareUser getUserByEmail(@PathVariable String email) { return softwareUserService.getSoftwareUserByEmail(email);}
 
     @PostMapping

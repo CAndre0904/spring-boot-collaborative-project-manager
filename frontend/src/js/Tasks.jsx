@@ -1,32 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/tasks.css";
 import { useNavigate } from "react-router-dom";
 
-function TaskAdd() {
+function Tasks() {
+
   const navigate = useNavigate();
   const [nameInput, setNameInput] = useState('');
   const [detailsInput, setDetailsInput] = useState('');
-  const [dateInput, setDateInput] = useState('');
-  const [userInput, setUserInput] = useState('');
+  const [dueDateInput, setDueDateInput] = useState('');
+  const [userIdInput, setUserIdInput] = useState('');
   function handleNameInput(e) {
       setNameInput(e.target.value);
   }
   function handleDetailsInput(e) {
       setDetailsInput(e.target.value);
   }
-  function handleDateInput(e) {
-    setDateInput(e.target.value);
+  function handleDueDateInput(e) {
+    setDueDateInput(e.target.value);
   }
-  function handleUserInput(e) {
-      setUserInput(e.target.value);
+  function handleUserIdInput(e) {
+      setUserIdInput(e.target.value);
     }
 
   function createTask() {
     const taskData = {
       name: nameInput,
       details: detailsInput,
-      date: dateInput,
-      user: userInput
+      dueDate: dueDateInput,
+      userId: userIdInput
     };
     fetch("http://localhost:8080/task", {
         method: "POST",
@@ -37,8 +38,8 @@ function TaskAdd() {
     });
     setNameInput('');
     setDetailsInput('');
-    setDateInput('');
-    setUserInput('');
+    setDueDateInput('');
+    setUserIdInput('');
     alert("TASK CREATED!");
     navigate("/tasks");
   }
@@ -56,12 +57,12 @@ function TaskAdd() {
             <input id="details" type="text"  onChange={handleDetailsInput} value={detailsInput} />
         </form>
         <form>
-             <label htmlFor="date">Date: </label>
-             <input id="date" type="date"  onChange={handleDateInput} value={dateInput} />
+             <label htmlFor="dueDate">Due Date: </label>
+             <input id="dueDate" type="date"  onChange={handleDueDateInput} value={dueDateInput} />
         </form>
         <form>
-             <label htmlFor="user">User ID: </label>
-             <input id="user" type="text"  onChange={handleUserInput} value={userInput} />
+             <label htmlFor="userId">User ID: </label>
+             <input id="userId" type="number"  onChange={handleUserIdInput} value={userIdInput} />
         </form>
       </div>
 
@@ -70,4 +71,4 @@ function TaskAdd() {
   );
 }
 
-export default TaskAdd;
+export default Tasks;

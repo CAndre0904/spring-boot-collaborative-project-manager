@@ -17,19 +17,17 @@ public class Task {
     private String details;
 
     private LocalDate dueDate;
-    @ManyToOne
-    private SoftwareUser user;
+    private int userId;
 
     public Task() {
 
     }
 
-    public Task(int id, String name, String details, LocalDate dueDate, SoftwareUser user) {
-        this.id = id;
+    public Task(String name, String details, LocalDate dueDate, Integer userId) {
         this.name = name;
         this.details = details;
         this.dueDate = dueDate;
-        this.user = user;
+        this.userId = userId;
     }
 
     @Override
@@ -37,11 +35,11 @@ public class Task {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
-        return id == task.id && Objects.equals(name, task.name) && Objects.equals(details, task.details) && Objects.equals(dueDate, task.dueDate) && Objects.equals(user, task.user);
+        return id == task.id && Objects.equals(name, task.name) && Objects.equals(details, task.details) && Objects.equals(dueDate, task.dueDate) && Objects.equals(userId, task.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, details, dueDate, user);
+        return Objects.hash(id, name, details, dueDate, userId);
     }
 }

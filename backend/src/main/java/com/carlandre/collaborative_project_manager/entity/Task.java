@@ -17,7 +17,7 @@ public class Task {
     private String details;
 
     private LocalDate dueDate;
-    @OneToMany(mappedBy = "Task", fetch = FetchType.LAZY, orphanRemoval = false)
+    @ManyToOne
     private SoftwareUser user;
 
     public Task() {

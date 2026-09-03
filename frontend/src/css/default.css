@@ -24,4 +24,7 @@ input {
 .site-links a {
         color: white;
         text-decoration: none;
+        background: green;
+        border: 2px solid white;
+        padding: 5px;
 }

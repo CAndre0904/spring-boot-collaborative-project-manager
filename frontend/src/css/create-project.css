@@ -1,6 +1,22 @@
-.create-project-title {
-  font-size: 30px;
-  position: fixed;
-  right: 40%;
-  top: -10px;
+.create-project-general {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.project-form {
+    background: green;
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.project-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

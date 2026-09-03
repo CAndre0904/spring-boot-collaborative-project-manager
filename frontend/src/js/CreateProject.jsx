@@ -45,28 +45,25 @@ function CreateProject() {
   }
 
   return (
-    <div className="projects">
-      <div>
+    <div className="create-project-general">
         <h1>Create Project</h1>
-        <form>
+        <div className="project-form">
+         <form>
            <label htmlFor="name">Name: </label>
            <input id="name" type="text"  onChange={handleNameInput} value={nameInput} />
-        </form>
-        <form>
+
             <label htmlFor="details">Details: </label>
             <input id="details" type="text"  onChange={handleDetailsInput} value={detailsInput} />
-        </form>
-        <form>
+
              <label htmlFor="dueDate">Due Date: </label>
              <input id="dueDate" type="date"  onChange={handleDueDateInput} value={dueDateInput} />
-        </form>
-        <form>
+
              <label htmlFor="userId">User ID: </label>
              <input id="userId" type="number"  onChange={handleUserIdInput} value={userIdInput} />
+
+             <button onClick={createProject}> Create Project </button>
         </form>
       </div>
-
-      <button onClick={createProject}> Create Project </button>
     </div>
   );
 }

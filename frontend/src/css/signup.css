@@ -1,6 +1,22 @@
-.signup {
-  font-size: 30px;
-  position: fixed;
-  right: 500px;
-  top: 120px;
+.sign-up-general {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sign-up-form {
+    background: green;
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.sign-up-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }

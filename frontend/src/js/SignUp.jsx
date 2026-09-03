@@ -40,24 +40,22 @@ function SignUp() {
   }
 
   return (
-    <div className="signup">
-      <div>
+    <div className="sign-up-general">
         <h1>Sign Up</h1>
+        <div className="sign-up-form">
         <form>
-          <label htmlFor="email">Email: </label>
-          <input id="email" type="text"  onChange={handleEmailInput} value={emailInput} />
-        </form>
-        <form>
+            <label htmlFor="email">Email: </label>
+            <input id="email" type="text"  onChange={handleEmailInput} value={emailInput} />
+
            <label htmlFor="name">Name: </label>
            <input id="name" type="text"  onChange={handleNameInput} value={nameInput} />
-        </form>
-        <form>
-            <label htmlFor="password">Password: </label>
-            <input id="password" type="text"  onChange={handlePasswordInput} value={passwordInput} />
-        </form>
-      </div>
 
-      <button onClick={createAccount}> Create Account </button>
+           <label htmlFor="password">Password: </label>
+           <input id="password" type="text"  onChange={handlePasswordInput} value={passwordInput} />
+
+            <button onClick={createAccount}> Create Account </button>
+        </form>
+        </div>
     </div>
   );
 }

@@ -36,17 +36,19 @@ function SignIn() {
   }
 
   return (
-      <div className="signin">
+      <div className="sign-in-general">
         <h1>Sign In</h1>
-        <form>
-          <label htmlFor="email">Email: </label>
-          <input id="email" type="text"  onChange={handleEmailInput} value={emailInput} />
-        </form>
-        <form>
+        <div className="sign-in-form">
+           <form>
+            <label htmlFor="email">Email: </label>
+            <input id="email" type="text"  onChange={handleEmailInput} value={emailInput} />
+
             <label htmlFor="password">Password: </label>
             <input id="password" type="text"  onChange={handlePasswordInput} value={passwordInput} />
-        </form>
-        <button onClick={validateDetails}> Sign In </button>
+
+            <button onClick={validateDetails}> Sign In </button>
+           </form>
+        </div>
       </div>
 
 

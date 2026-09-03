@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../css/tasks.css";
+import "../css/projects.css";
 import { useNavigate } from "react-router-dom";
 
-function Tasks() {
+function Projects() {
 
   const navigate = useNavigate();
   const [nameInput, setNameInput] = useState('');
@@ -22,32 +22,32 @@ function Tasks() {
       setUserIdInput(e.target.value);
     }
 
-  function createTask() {
-    const taskData = {
+  function createProject() {
+    const projectData = {
       name: nameInput,
       details: detailsInput,
       dueDate: dueDateInput,
       userId: userIdInput
     };
-    fetch("http://localhost:8080/task", {
+    fetch("http://localhost:8080/project", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(taskData),
+        body: JSON.stringify(projectData),
     });
     setNameInput('');
     setDetailsInput('');
     setDueDateInput('');
     setUserIdInput('');
-    alert("TASK CREATED!");
-    navigate("/tasks");
+    alert("PROJECT CREATED!");
+    navigate("/projects");
   }
 
   return (
-    <div className="tasks">
+    <div className="projects">
       <div>
-        <h1>Tasks</h1>
+        <h1>Projects</h1>
         <form>
            <label htmlFor="name">Name: </label>
            <input id="name" type="text"  onChange={handleNameInput} value={nameInput} />
@@ -66,9 +66,9 @@ function Tasks() {
         </form>
       </div>
 
-      <button onClick={createTask}> Create Task </button>
+      <button onClick={createProject}> Create Project </button>
     </div>
   );
 }
 
-export default Tasks;
+export default Projects;

@@ -6,10 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.*;
 
 @Entity
-public class Task {
+public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,11 +18,11 @@ public class Task {
     private LocalDate dueDate;
     private int userId;
 
-    public Task() {
+    public Project() {
 
     }
 
-    public Task(String name, String details, LocalDate dueDate, Integer userId) {
+    public Project(String name, String details, LocalDate dueDate, Integer userId) {
         this.name = name;
         this.details = details;
         this.dueDate = dueDate;
@@ -34,8 +33,8 @@ public class Task {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return id == task.id && Objects.equals(name, task.name) && Objects.equals(details, task.details) && Objects.equals(dueDate, task.dueDate) && Objects.equals(userId, task.userId);
+        Project project = (Project) o;
+        return id == project.id && Objects.equals(name, project.name) && Objects.equals(details, project.details) && Objects.equals(dueDate, project.dueDate) && Objects.equals(userId, project.userId);
     }
 
     @Override

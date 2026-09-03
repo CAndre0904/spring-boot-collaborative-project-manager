@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/projects.css";
 
 function Projects() {
 
@@ -14,11 +15,11 @@ function Projects() {
   }, []);
 
   return (
-    <div className="projects">
+    <div className="projects-general">
+      <h1>Projects</h1>
       <div>
-        <h1>Projects</h1>
         {projects.map(project =>
-            <div>
+            <div className="individual-project">
                 <h3>{project.name}</h3>
                 <h3>{project.details}</h3>
                 <h3>{project.dueDate}</h3>

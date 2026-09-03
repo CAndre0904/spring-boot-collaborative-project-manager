@@ -1,0 +1,12 @@
+.projects-general {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.individual-project {
+    width: 500px;
+    background: green;
+    border: 3px solid white;
+}

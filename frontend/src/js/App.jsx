@@ -12,10 +12,10 @@ export default function App() {
   <>
   <BrowserRouter>
     <div className="site-links">
-        <Link to="/signup">Sign Up </Link>
+        <Link to="/signup">Sign Up</Link>
         <Link to="/home">Home </Link>
-        <Link to="/create-project">Create Project </Link>
-        <Link to="/projects">Projects </Link>
+        <Link to="/create-project">Create Project</Link>
+        <Link to="/projects">Projects</Link>
     </div>
     <Routes>
         <Route path="/signup" element={<SignUp />} />

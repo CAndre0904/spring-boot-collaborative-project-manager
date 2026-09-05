@@ -32,4 +32,10 @@ public class ProjectController {
         projectService.insertProject(newProject);
     }
 
+    @GetMapping("delete-project/{id}")
+    public void deleteProject(@PathVariable Integer id) {
+        Project projectToDelete = getProjectById(id);
+        projectService.deleteProject(projectToDelete);
+    }
+
 }

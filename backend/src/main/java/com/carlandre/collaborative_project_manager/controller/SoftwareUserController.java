@@ -2,7 +2,7 @@
 
 package com.carlandre.collaborative_project_manager.controller;
 
-import com.carlandre.collaborative_project_manager.entity.LoginRequest;
+import com.carlandre.collaborative_project_manager.model.LoginRequest;
 import com.carlandre.collaborative_project_manager.entity.SoftwareUser;
 import com.carlandre.collaborative_project_manager.service.SoftwareUserService;
 import org.springframework.web.bind.annotation.*;

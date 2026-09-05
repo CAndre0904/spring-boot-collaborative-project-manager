@@ -1,4 +1,4 @@
-package com.carlandre.collaborative_project_manager.entity;
+package com.carlandre.collaborative_project_manager.model;
 
 public class LoginRequest {
     private String email;

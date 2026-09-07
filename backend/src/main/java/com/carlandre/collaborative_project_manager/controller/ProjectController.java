@@ -38,7 +38,7 @@ public class ProjectController {
         projectService.deleteProject(projectToDelete);
     }
 
-    @GetMapping("edit-project")
+    @PostMapping("edit-project")
     public void editProject(@RequestBody Project updatedProject) {
         projectService.editProject(updatedProject);
     }

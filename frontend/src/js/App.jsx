@@ -4,6 +4,7 @@ import SignIn from "./SignIn";
 import Home from "./Home";
 import CreateProject from "./CreateProject";
 import Projects from "./Projects";
+import EditProject from "./EditProject";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/edit-project/:id" element={<EditProject />} />
     </Routes>
   </BrowserRouter>
   </>

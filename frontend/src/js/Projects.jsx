@@ -5,6 +5,7 @@ import "../css/projects.css";
 function Projects() {
 
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:8080/project")
@@ -22,6 +23,10 @@ function Projects() {
     })
   };
 
+  function editProject(id) {
+    navigate("/edit-project/" + id);
+  }
+
   return (
     <div className="projects-general">
       <h1>Projects</h1>
@@ -32,6 +37,7 @@ function Projects() {
                 <h3>{project.details}</h3>
                 <h3>{project.dueDate}</h3>
                 <button onClick={() => deleteProject(project.id)}> Delete </button>
+                <button onClick={() => editProject(project.id)}> Edit </button>
             </div>
         )}
       </div>

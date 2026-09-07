@@ -22,7 +22,13 @@ public class ProjectService {
         projectRepository.save(newProject);
     }
 
-    public void deleteProject(Project projectToDelete) {projectRepository.delete(projectToDelete);}
+    public void deleteProject(Project projectToDelete) {
+        projectRepository.delete(projectToDelete);
+    }
+
+    public void editProject(Project projectToEdit) {
+        projectRepository.save(projectToEdit);
+    }
 
     public Project getProjectById(Integer id) {
         return projectRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found."));

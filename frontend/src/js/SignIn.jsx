@@ -13,7 +13,8 @@ function SignIn() {
       setPasswordInput(e.target.value);
   }
 
-  async function validateDetails() {
+  async function validateDetails(e) {
+    e.preventDefault();
     const response = await fetch("http://localhost:8080/software-user/validate-password", {
         method: "POST",
         headers: {
@@ -26,6 +27,7 @@ function SignIn() {
     });
     const valid = await response.json()
     if (valid === true) {
+        alert("LOGIN SUCCESSFUL");
         navigate("/home");
     }
     else {

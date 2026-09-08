@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "../css/create-project.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function CreateTask() {
 
   const navigate = useNavigate();
-  const [taskInput, setTaskInput] = useState('');
+  const [descriptionInput, setDescriptionInput] = useState('');
   const [dueDateInput, setDueDateInput] = useState('');
   const [userIdInput, setUserIdInput] = useState('');
 
   const { projectid } = useParams();
 
-  function handleTaskInput(e) {
-      setTaskInput(e.target.value);
+  function handleDescriptionInput(e) {
+      setDescriptionInput(e.target.value);
   }
   function handleDueDateInput(e) {
     setDueDateInput(e.target.value);
@@ -23,7 +23,7 @@ function CreateTask() {
 
   function createTask() {
     const taskData = {
-      task: taskInput,
+      description: descriptionInput,
       dueDate: dueDateInput,
       userId: userIdInput,
       projectId: projectid
@@ -35,7 +35,7 @@ function CreateTask() {
         },
         body: JSON.stringify(taskData),
     });
-    setTaskInput('');
+    setDescriptionInput('');
     setDueDateInput('');
     setUserIdInput('');
     alert("TASK CREATED!");
@@ -47,8 +47,8 @@ function CreateTask() {
         <h1>Create Task</h1>
         <div className="project-form">
          <form>
-             <label htmlFor="task">Task: </label>
-             <input id="task" type="text"  onChange={handleTaskInput} value={taskInput} />
+             <label htmlFor="description">Description: </label>
+             <input id="description" type="text"  onChange={handleDescriptionInput} value={descriptionInput} />
 
              <label htmlFor="dueDate">Due Date: </label>
              <input id="dueDate" type="date"  onChange={handleDueDateInput} value={dueDateInput} />

@@ -26,7 +26,7 @@ public class TaskService {
         taskRepository.delete(taskToDelete);
     }
 
-    public void editProject(Task taskToEdit) {
+    public void editTask(Task taskToEdit) {
         taskRepository.save(taskToEdit);
     }
 

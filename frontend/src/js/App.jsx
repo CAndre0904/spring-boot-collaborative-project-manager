@@ -5,6 +5,7 @@ import Home from "./Home";
 import CreateProject from "./CreateProject";
 import Projects from "./Projects";
 import EditProject from "./EditProject";
+import CreateTask from "./CreateTask";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/edit-project/:id" element={<EditProject />} />
+        <Route path="/create-task/:projectid" element={<CreateTask />} />
     </Routes>
   </BrowserRouter>
   </>

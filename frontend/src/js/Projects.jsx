@@ -29,7 +29,15 @@ function Projects() {
 
   function createTask(projectId) {
       navigate("/create-task/" + projectId);
-    }
+  }
+
+  function getProjectTasks(projectId) {
+    fetch("http://localhost:8080/task/get-project-tasks/" + projectId)
+              .then(response => response.json())
+              .then(tasks => {
+                return tasks;
+              })
+  }
 
   return (
     <div className="projects-general">
@@ -40,6 +48,14 @@ function Projects() {
                 <h3>{project.name}</h3>
                 <h3>{project.details}</h3>
                 <h3>{project.dueDate}</h3>
+                <h3>Tasks:</h3>
+                {getProjectTasks(project.id).map(task =>
+                   <div className="individual-task">
+                        <h3>{task.description}</h3>
+                        <h3>{task.dueDate}</h3>
+                        <h3>{project.userId}</h3>
+                   </div>
+                )}
                 <button onClick={() => createTask(project.id)}> Add Task </button>
                 <button onClick={() => deleteProject(project.id)}> Delete </button>
                 <button onClick={() => editProject(project.id)}> Edit </button>

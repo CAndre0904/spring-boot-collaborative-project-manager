@@ -10,3 +10,9 @@
     background: green;
     border: 3px solid white;
 }
+
+.individual-task {
+        background: white;
+        border: 3px solid black;
+        color: black;
+}

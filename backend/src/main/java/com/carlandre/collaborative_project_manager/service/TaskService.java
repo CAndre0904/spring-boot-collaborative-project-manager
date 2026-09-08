@@ -34,4 +34,8 @@ public class TaskService {
         return taskRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " not found."));
     }
 
+    public List<Task> getProjectTasks(Integer projectId) {
+        return taskRepository.findByProjectId(projectId);
+    }
+
 }

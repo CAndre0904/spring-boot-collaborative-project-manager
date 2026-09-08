@@ -27,6 +27,10 @@ function Projects() {
     navigate("/edit-project/" + id);
   }
 
+  function createTask(projectId) {
+      navigate("/create-task/" + projectId);
+    }
+
   return (
     <div className="projects-general">
       <h1>Projects</h1>
@@ -36,6 +40,7 @@ function Projects() {
                 <h3>{project.name}</h3>
                 <h3>{project.details}</h3>
                 <h3>{project.dueDate}</h3>
+                <button onClick={() => createTask(project.id)}> Add Task </button>
                 <button onClick={() => deleteProject(project.id)}> Delete </button>
                 <button onClick={() => editProject(project.id)}> Edit </button>
             </div>
